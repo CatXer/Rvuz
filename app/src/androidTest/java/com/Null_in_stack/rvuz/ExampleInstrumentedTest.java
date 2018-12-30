@@ -1,4 +1,4 @@
-package com.example.serg.rvuz;
+package com.Null_in_stack.rvuz;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

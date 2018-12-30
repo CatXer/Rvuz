@@ -10,7 +10,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.Null_in_stack.rvuz.ScheduleM.Subject;
-import com.example.serg.rvuz.R;
+import com.Null_in_stack.rvuz.R;
 
 import java.util.ArrayList;
 

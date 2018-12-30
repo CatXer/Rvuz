@@ -11,7 +11,7 @@ import android.widget.ImageButton;
 
 import com.Null_in_stack.rvuz.ScheduleM.Subject;
 import com.Null_in_stack.rvuz.ScheduleM.Task;
-import com.example.serg.rvuz.R;
+import com.Null_in_stack.rvuz.R;
 
 import java.util.Objects;
 

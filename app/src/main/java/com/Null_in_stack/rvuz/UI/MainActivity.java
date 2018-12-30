@@ -11,8 +11,7 @@ import android.widget.TextView;
 
 import com.Null_in_stack.rvuz.ScheduleM.DataBase;
 import com.Null_in_stack.rvuz.ScheduleM.Rasp;
-import com.example.serg.rvuz.R;
-
+import com.Null_in_stack.rvuz.R;
 
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {

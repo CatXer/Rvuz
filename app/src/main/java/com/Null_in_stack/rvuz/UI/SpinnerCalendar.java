@@ -12,7 +12,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.Null_in_stack.rvuz.ScheduleM.DateT;
-import com.example.serg.rvuz.R;
+import com.Null_in_stack.rvuz.R;
 
 import java.util.Calendar;
 

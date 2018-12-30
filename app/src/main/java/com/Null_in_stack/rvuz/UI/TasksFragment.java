@@ -7,7 +7,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.serg.rvuz.R;
+import com.Null_in_stack.rvuz.R;
+
 
 /**
  * A simple {@link Fragment} subclass.

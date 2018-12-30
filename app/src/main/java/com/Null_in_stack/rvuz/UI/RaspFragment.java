@@ -11,8 +11,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.Null_in_stack.rvuz.ScheduleM.DateT;
-import com.example.serg.rvuz.R;
-
+import com.Null_in_stack.rvuz.R;
 
 
 public class RaspFragment extends Fragment {
