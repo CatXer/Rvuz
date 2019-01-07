@@ -24,7 +24,7 @@ public class DateT {
         int dayOfYear = calendar.get(Calendar.DAY_OF_YEAR);
         if (dayOfYear - DateT.START_LESSON_DAY >= 0)
             return dayOfYear - DateT.START_LESSON_DAY;
-        else if (dayOfYear >= END_LESSON_DAY) return dayOfYear + DateT.START_LESSON_NEWYEAR;
+        else if (dayOfYear <= END_LESSON_DAY) return dayOfYear + DateT.START_LESSON_NEWYEAR;
         return 0;
     }
 
@@ -32,11 +32,11 @@ public class DateT {
         Calendar c = Calendar.getInstance();
         c.setFirstDayOfWeek(Calendar.MONDAY);
         if (lessonDay <= DateT.START_LESSON_NEWYEAR) {
-            c.set(Calendar.YEAR, c.get(Calendar.YEAR));
+            c.set(Calendar.YEAR, c.get(Calendar.YEAR)-1);
             c.set(Calendar.DAY_OF_YEAR, lessonDay + DateT.START_LESSON_DAY);
             return c;
         } else {
-            c.set(Calendar.YEAR, c.get(Calendar.YEAR) + 1);
+            c.set(Calendar.YEAR, c.get(Calendar.YEAR));
             c.set(Calendar.DAY_OF_YEAR, lessonDay - DateT.START_LESSON_NEWYEAR);
             return c;
         }
