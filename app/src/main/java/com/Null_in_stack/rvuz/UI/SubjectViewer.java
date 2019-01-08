@@ -20,8 +20,6 @@ public class SubjectViewer extends AppCompatActivity implements View.OnClickList
     private EditText HomeText;
     private Subject subject;
     private int day;
-    private ImageButton delete;
-    private ImageButton add;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,12 +38,12 @@ public class SubjectViewer extends AppCompatActivity implements View.OnClickList
             }
         });
 
-        delete = findViewById(R.id.delete_task);
+        ImageButton delete = findViewById(R.id.delete_task);
         delete.setOnClickListener(this);
-        add = findViewById(R.id.add_task);
+        ImageButton add = findViewById(R.id.add_task);
         add.setOnClickListener(this);
 
-        subject = (Subject) getIntent().getExtras().get("subject");
+        subject = (Subject) Objects.requireNonNull(getIntent().getExtras()).get("subject");
         day = getIntent().getExtras().getInt("day");
 
         if (subject != null) {

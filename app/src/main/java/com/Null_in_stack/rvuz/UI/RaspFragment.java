@@ -38,7 +38,7 @@ public class RaspFragment extends Fragment {
         backWeek.setOnClickListener(myAdapter);
 
         viewPager.setAdapter(myAdapter);
-        viewPager.setOnPageChangeListener(myAdapter);
+        viewPager.addOnPageChangeListener(myAdapter);
 
 
         //viewPager.setCurrentItem(DateT.getCurrentLessDay());

@@ -20,7 +20,7 @@ public class Download extends AsyncTask<Context, Void, File> {
             BufferedInputStream bis = new BufferedInputStream(url.openStream());
             FileOutputStream fis = new FileOutputStream(file);
             byte[] buffer = new byte[1024];
-            int count = 0;
+            int count;
             while ((count = bis.read(buffer, 0, 1024)) != -1) {
                 fis.write(buffer, 0, count);
             }

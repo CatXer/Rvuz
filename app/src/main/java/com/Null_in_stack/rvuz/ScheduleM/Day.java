@@ -13,7 +13,7 @@ public class Day {
 
     }
 
-    public String getDayType() {
+    String getDayType() {
         return DayType;
     }
 

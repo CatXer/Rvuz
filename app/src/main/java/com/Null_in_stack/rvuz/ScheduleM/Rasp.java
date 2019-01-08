@@ -12,8 +12,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Date;
+import java.util.Objects;
 import java.util.concurrent.ExecutionException;
 
 
@@ -24,9 +23,7 @@ public class Rasp {
     private HSSFSheet myExcelSheet;
     private Context context;
 
-
     ////////////////////////////////////////
-
 
     private final static int END_POSIT = 52;
     private final static int START_POSIT = 17;
@@ -46,7 +43,7 @@ public class Rasp {
 
 
         try {
-            File f = null;
+            File f;
             if (!context.getFileStreamPath("Data.xls").exists()) {
                 Download d = new Download();
                 d.execute(context);
@@ -82,7 +79,7 @@ public class Rasp {
                 LESSONS_COUNT++;
             if (getCV(i, classRoom + separator * 7) != null) {
                 String time = (String) getCV(i, LESSONS_TIME);
-                Subject s = new Subject(time.substring(0, time.indexOf('-')), time.substring(time.indexOf('-') + 1), getCV(i, classRoom + separator * 7), getCV(i, lessonsType + separator * 5), getCV(i, teacher + separator * 3), getCV(i, lessonsName + separator));
+                Subject s = new Subject(time.substring(0, Objects.requireNonNull(time).indexOf('-')), time.substring(time.indexOf('-') + 1), getCV(i, classRoom + separator * 7), getCV(i, lessonsType + separator * 5), getCV(i, teacher + separator * 3), getCV(i, lessonsName + separator));
                 subjects.add(s);
 
             }

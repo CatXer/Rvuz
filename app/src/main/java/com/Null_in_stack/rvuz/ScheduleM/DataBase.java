@@ -45,7 +45,6 @@ public class DataBase {
         myDB.close();
     }
 
-
     public void removeSingleContact(String id_id) {
         myDB = context.openOrCreateDatabase("my.db", MODE_PRIVATE, null);
         myDB.execSQL("DELETE FROM  tasks  WHERE id = '" + id_id + "'");
@@ -53,7 +52,7 @@ public class DataBase {
         System.out.println("removed");
     }
 
-    public void removeSingleContact(String id_id, SQLiteDatabase database) {
+    private void removeSingleContact(String id_id, SQLiteDatabase database) {
         database.execSQL("DELETE FROM  tasks  WHERE id = '" + id_id + "'");
         System.out.println("removed");
     }

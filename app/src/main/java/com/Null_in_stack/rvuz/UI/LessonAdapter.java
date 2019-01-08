@@ -2,6 +2,7 @@ package com.Null_in_stack.rvuz.UI;
 
 import android.content.Context;
 import android.content.Intent;
+import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -20,21 +21,21 @@ public class LessonAdapter extends RecyclerView.Adapter<LessonAdapter.LessonHold
     private Context context;
     private int lessonDay;
 
-    public void Fill(ArrayList<Subject> subjects, Context context, int position) {
+    void Fill(ArrayList<Subject> subjects, Context context, int position) {
         items.addAll(subjects);
         this.context = context;
         lessonDay = position;
     }
 
-
+    @NonNull
     @Override
-    public LessonHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public LessonHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.subject_card, parent, false);
         return new LessonHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(LessonHolder holder, int position) {
+    public void onBindViewHolder(@NonNull LessonHolder holder, int position) {
         holder.bind(items.get(position));
     }
 

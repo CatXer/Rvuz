@@ -11,7 +11,7 @@ public class Weak {
         this.odd = odd;
     }
 
-    public void fillDays(ArrayList<Day> days) {
+    void fillDays(ArrayList<Day> days) {
         this.days = days;
     }
 

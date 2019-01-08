@@ -15,6 +15,7 @@ import com.Null_in_stack.rvuz.ScheduleM.DateT;
 import com.Null_in_stack.rvuz.R;
 
 import java.util.Calendar;
+import java.util.Objects;
 
 
 public class SpinnerCalendar extends PagerAdapter implements View.OnClickListener, ViewPager.OnPageChangeListener {
@@ -24,12 +25,10 @@ public class SpinnerCalendar extends PagerAdapter implements View.OnClickListene
     private int currentPage = 0;
 
 
-    public SpinnerCalendar(Context context, RaspFragment raspFragment, int day) {
+    SpinnerCalendar(Context context, RaspFragment raspFragment, int day) {
         this.context = context;
         parent = raspFragment;
         onPageSelected(day);
-
-
     }
 
 
@@ -37,7 +36,6 @@ public class SpinnerCalendar extends PagerAdapter implements View.OnClickListene
     public int getCount() {
         return DateT.TOTAL_DAYS;
     }
-
 
     private void Init(View viewContainer, int position) {
         Calendar calendar = DateT.getRealDate(position);
@@ -68,7 +66,6 @@ public class SpinnerCalendar extends PagerAdapter implements View.OnClickListene
 
 
     }
-
 
     @Override
     public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
@@ -106,19 +103,15 @@ public class SpinnerCalendar extends PagerAdapter implements View.OnClickListene
     }
 
     @Override
-    public boolean isViewFromObject(View view, Object object) {
-        if (object != null) {
-            return object == view;
-        } else {
-            return false;
-        }
+    public boolean isViewFromObject(@NonNull View view, @NonNull Object object) {
+        return object == view;
     }
 
     @NonNull
     @Override
     public Object instantiateItem(@NonNull ViewGroup container, int position) {
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        View view = (inflater).inflate(R.layout.day_card, container, false);
+        View view = (Objects.requireNonNull(inflater)).inflate(R.layout.day_card, container, false);
 
 
         Init(view, position);

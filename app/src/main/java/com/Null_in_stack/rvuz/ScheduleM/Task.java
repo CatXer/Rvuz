@@ -11,7 +11,7 @@ public class Task implements Serializable {
     private String Teacher;
 
 
-    public Task(String task, int lessonDate, String teacher) {
+    Task(String task, int lessonDate, String teacher) {
         this.task = task;
         LessonDate = lessonDate;
         Teacher = teacher;
