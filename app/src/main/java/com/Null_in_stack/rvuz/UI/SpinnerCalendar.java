@@ -54,7 +54,7 @@ public class SpinnerCalendar extends PagerAdapter implements View.OnClickListene
         String Month = DateT.months[calendar.get(Calendar.MONTH)];
         date.setText(String.valueOf(WeekDay + " " + calendar.get(Calendar.DATE) + " " + Month));
         /////////////////////////////////////////
-        if (!DateT.days[calendar.get(Calendar.DAY_OF_WEEK)].equals("ВС")) {
+        if (!DateT.days[calendar.get(Calendar.DAY_OF_WEEK)].equals("ВС")&&!DateT.days[calendar.get(Calendar.DAY_OF_WEEK)].equals("СБ")) {
             //System.out.println("ВС is - {" + !DateT.days[calendar.get(Calendar.DAY_OF_WEEK)].equals("ВС") + "} in - [" + position + "]");
             lessonAdapter.Fill(isEvenWeek ? MainActivity.rasp.getEven_week().getDay(WeekDay).getSubjects() : MainActivity.rasp.getOdd_week().getDay(WeekDay).getSubjects(),
                     context, position);

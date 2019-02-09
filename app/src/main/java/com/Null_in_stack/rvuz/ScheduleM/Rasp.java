@@ -25,7 +25,7 @@ public class Rasp {
 
     ////////////////////////////////////////
 
-    private final static int END_POSIT = 52;
+    private final static int END_POSIT = 50;
     private final static int START_POSIT = 17;
     private final static int DAY_TYPE = 0;
     private final static int LESSONS_TIME = 2;
@@ -50,7 +50,7 @@ public class Rasp {
                 f = d.get();
                 System.out.println("Download!");
             }else {f = context.getFileStreamPath("Data.xls");}
-            OpenPage(f, "мв-218");
+            OpenPage(f, "МВА-118");
 
         } catch (IOException | InterruptedException | ExecutionException e) {
             e.printStackTrace();
@@ -67,7 +67,7 @@ public class Rasp {
         ArrayList<Day> days = new ArrayList<>();
         int LESSONS_COUNT = 0;
         int separator = 0;
-        if (!odd)
+        if (odd)
             separator = 1;
 
         String dayType = null;
@@ -81,12 +81,12 @@ public class Rasp {
                 String time = (String) getCV(i, LESSONS_TIME);
                 Subject s = new Subject(time.substring(0, Objects.requireNonNull(time).indexOf('-')), time.substring(time.indexOf('-') + 1), getCV(i, classRoom + separator * 7), getCV(i, lessonsType + separator * 5), getCV(i, teacher + separator * 3), getCV(i, lessonsName + separator));
                 subjects.add(s);
-
             }
             if (LESSONS_COUNT == 5) {
                 LESSONS_COUNT = 0;
                 days.add(new Day(subjects, dayType));
                 subjects = new ArrayList<>();
+                i++;
             }
         }
         return days;

@@ -69,7 +69,7 @@ public class LessonAdapter extends RecyclerView.Adapter<LessonAdapter.LessonHold
 
         void bind(Subject subject) {
             String type = null;
-            switch (subject.getType()) {
+            switch (subject.getType().toLowerCase()) {
                 case "лек":
                     type = "лекция";
                     break;
